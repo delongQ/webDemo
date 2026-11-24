@@ -21,6 +21,7 @@
         <li>结构写在 HTML 里</li>
         <li>外观写在 CSS 里</li>
         <li>计算器运算写在 JS 里</li>
+        <li>右下角可以玩俄罗斯方块</li>
       </ul>
     </section>
 
@@ -69,6 +70,26 @@
     <p>Delong · 一个简单的个人页</p>
   </footer>
 
+  <aside class="tetris" id="tetris">
+    <button type="button" class="tetris-open" id="tetris-open" hidden>俄罗斯方块</button>
+    <div class="tetris-box" id="tetris-box" tabindex="-1">
+      <div class="tetris-bar">
+        <span>俄罗斯方块</span>
+        <b id="tetris-score">0</b>
+        <button type="button" id="tetris-close" aria-label="收起">×</button>
+      </div>
+      <canvas id="tetris-board" width="120" height="240" aria-label="游戏区域"></canvas>
+      <div class="tetris-keys">
+        <button type="button" data-act="left" aria-label="左移">←</button>
+        <button type="button" data-act="rot" aria-label="旋转">转</button>
+        <button type="button" data-act="right" aria-label="右移">→</button>
+        <button type="button" data-act="drop" aria-label="落下">落</button>
+      </div>
+      <button type="button" id="tetris-start">开始</button>
+    </div>
+  </aside>
+
   <script src="calculator.js"></script>
+  <script src="tetris.js"></script>
 </body>
 </html>
