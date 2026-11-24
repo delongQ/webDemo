@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Delong</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header">
+    <p class="eyebrow">个人网站</p>
+    <h1>Delong</h1>
+    <p class="lead">做产品，也写代码。这是一个只用 HTML、CSS 和 JavaScript 搭起来的页面。</p>
+  </header>
+
+  <main>
+    <section class="about" aria-labelledby="about-title">
+      <h2 id="about-title">关于</h2>
+      <p>页面没有框架，也没有构建步骤。用浏览器直接打开 <code>index.html</code> 就能看。</p>
+      <ul>
+        <li>结构写在 HTML 里</li>
+        <li>外观写在 CSS 里</li>
+        <li>计算器运算写在 JS 里</li>
+      </ul>
+    </section>
+
+    <section class="calc-section" aria-labelledby="calc-title">
+      <div class="calc-copy">
+        <h2 id="calc-title">计算器</h2>
+        <p>支持加减乘除、小数、百分号和连续运算。也可以用键盘输入。</p>
+      </div>
+
+      <div class="calculator" id="calculator">
+        <div class="calc-screen" aria-live="polite">
+          <p class="calc-expression" id="expression">&nbsp;</p>
+          <p class="calc-display" id="display">0</p>
+        </div>
+        <div class="calc-keys" role="group" aria-label="计算器按键">
+          <button type="button" data-action="clear">AC</button>
+          <button type="button" data-action="backspace" aria-label="退格">⌫</button>
+          <button type="button" data-action="percent">%</button>
+          <button type="button" data-operator="÷" class="op">÷</button>
+
+          <button type="button" data-digit="7">7</button>
+          <button type="button" data-digit="8">8</button>
+          <button type="button" data-digit="9">9</button>
+          <button type="button" data-operator="×" class="op">×</button>
+
+          <button type="button" data-digit="4">4</button>
+          <button type="button" data-digit="5">5</button>
+          <button type="button" data-digit="6">6</button>
+          <button type="button" data-operator="−" class="op">−</button>
+
+          <button type="button" data-digit="1">1</button>
+          <button type="button" data-digit="2">2</button>
+          <button type="button" data-digit="3">3</button>
+          <button type="button" data-operator="+" class="op">+</button>
+
+          <button type="button" data-action="sign">+/−</button>
+          <button type="button" data-digit="0">0</button>
+          <button type="button" data-action="decimal">.</button>
+          <button type="button" data-action="equals" class="equals">=</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>Delong · 一个简单的个人页</p>
+  </footer>
+
+  <script src="calculator.js"></script>
+</body>
+</html>

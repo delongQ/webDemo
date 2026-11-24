@@ -1,0 +1,221 @@
+:root {
+  --paper: #f3efe6;
+  --ink: #1c1915;
+  --muted: #6d655c;
+  --line: #ddd4c6;
+  --card: #fffdf8;
+  --key: #efe8dc;
+  --key-ink: #1c1915;
+  --op: #2f4a3c;
+  --equals: #c45c26;
+  --screen: #1c1915;
+  --screen-ink: #f6f1e7;
+  --shadow: 0 18px 40px rgba(28, 25, 21, 0.08);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: "Iowan Old Style", "Palatino Linotype", Palatino, "Songti SC", serif;
+  color: var(--ink);
+  background:
+    radial-gradient(circle at top left, #fffaf2 0, transparent 42%),
+    var(--paper);
+}
+
+.site-header,
+main,
+footer {
+  width: min(920px, calc(100% - 40px));
+  margin-inline: auto;
+}
+
+.site-header {
+  padding: 72px 0 28px;
+}
+
+.eyebrow {
+  margin: 0 0 12px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  font-family: "Avenir Next", "PingFang SC", sans-serif;
+  font-size: 12px;
+  color: var(--muted);
+}
+
+h1 {
+  margin: 0;
+  font-size: clamp(52px, 8vw, 84px);
+  font-weight: 500;
+  letter-spacing: -0.04em;
+  line-height: 0.95;
+}
+
+.lead {
+  max-width: 34em;
+  margin: 18px 0 0;
+  font-size: 20px;
+  line-height: 1.5;
+}
+
+main {
+  display: grid;
+  gap: 28px;
+  padding-bottom: 48px;
+}
+
+.about,
+.calc-section {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 22px;
+  box-shadow: var(--shadow);
+}
+
+.about {
+  padding: 28px 32px 8px;
+}
+
+h2 {
+  margin: 0 0 8px;
+  font-size: 28px;
+  font-weight: 500;
+}
+
+.about p,
+.calc-copy p,
+footer p {
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+.about ul {
+  padding-left: 1.1em;
+  color: var(--ink);
+}
+
+.about li {
+  margin: 6px 0;
+}
+
+code {
+  font-family: "SF Mono", ui-monospace, Menlo, monospace;
+  font-size: 0.92em;
+  background: #f3ece1;
+  padding: 0.1em 0.35em;
+  border-radius: 6px;
+}
+
+.calc-section {
+  display: grid;
+  grid-template-columns: 1fr minmax(280px, 360px);
+  gap: 28px;
+  align-items: center;
+  padding: 28px;
+  background: #e7f3fc;
+}
+
+.calculator {
+  background: #f7f2ea;
+  border: 1px solid #e4d9c8;
+  border-radius: 20px;
+  padding: 14px;
+}
+
+.calc-screen {
+  background: var(--screen);
+  color: var(--screen-ink);
+  border-radius: 14px;
+  min-height: 96px;
+  padding: 14px 16px 12px;
+  margin-bottom: 12px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.calc-expression,
+.calc-display {
+  margin: 0;
+  text-align: right;
+  font-family: "Avenir Next", "PingFang SC", sans-serif;
+}
+
+.calc-expression {
+  min-height: 1.2em;
+  color: #b7aea2;
+  font-size: 14px;
+}
+
+.calc-display {
+  font-size: 40px;
+  line-height: 1.15;
+  letter-spacing: -0.03em;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.calc-keys {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+}
+
+.calc-keys button {
+  height: 58px;
+  border: 0;
+  border-radius: 12px;
+  background: var(--key);
+  color: var(--key-ink);
+  font: 500 20px/1 "Avenir Next", "PingFang SC", sans-serif;
+  cursor: pointer;
+}
+
+.calc-keys button:hover {
+  filter: brightness(0.97);
+}
+
+.calc-keys button:active {
+  transform: translateY(1px);
+}
+
+.calc-keys .op {
+  background: var(--op);
+  color: #f6f1e7;
+}
+
+.calc-keys .equals {
+  background: var(--equals);
+  color: #fffaf4;
+}
+
+.calc-keys .is-active {
+  outline: 2px solid #c45c26;
+  outline-offset: -2px;
+}
+
+footer {
+  padding: 8px 0 40px;
+  font-family: "Avenir Next", "PingFang SC", sans-serif;
+  font-size: 14px;
+}
+
+@media (max-width: 760px) {
+  .site-header {
+    padding-top: 40px;
+  }
+
+  .calc-section {
+    grid-template-columns: 1fr;
+    padding: 22px;
+  }
+
+  .about {
+    padding: 22px 22px 4px;
+  }
+}
